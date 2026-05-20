@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SANO Solutions — Join the Sales Team</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;450;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*:before,*:after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --black:#000;
+  --black-soft:#060608;
+  --black-card:rgba(6,6,10,0.9);
+  --blue:#0070F3;
+  --blue-bright:#338EF7;
+  --cyan:#00D4FF;
+  --amber:#E8943A;
+  --green:#10F5A0;
+  --red:#FF2D2D;
+  --text-primary:#F2EBE0;
+  --text-secondary:#DDD6CB;
+  --text-muted:#B5AEA3;
+  --text-glow:0 1px 3px rgba(0,0,0,0.6),0 0 12px rgba(0,0,0,0.4);
+  --border:rgba(255,255,255,0.06);
+  --border-hover:rgba(255,255,255,0.12);
+  --border-accent:rgba(0,112,243,0.3);
+  --font:"Space Grotesk",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --radius:6px;
+  --radius-lg:8px;
+  --ease:cubic-bezier(0.16,1,0.3,1)
+}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:var(--font);background:var(--black);color:var(--text-primary);line-height:1.6;overflow-x:hidden;text-shadow:var(--text-glow)}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+
+.bg-gradient{position:fixed;inset:0;z-index:0;background:radial-gradient(ellipse 80% 50% at 50% 0%,rgba(0,112,243,0.08),transparent 60%),radial-gradient(ellipse 60% 40% at 80% 100%,rgba(232,148,58,0.05),transparent 50%),#000}
+.site-content{position:relative;z-index:1}
+
+/* Nav */
+.nav{padding:20px 0;border-bottom:1px solid var(--border);background:rgba(0,0,0,0.6);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:0 clamp(20px,4vw,48px);max-width:1140px;margin:0 auto}
+.nav-logo{font-size:22px;font-weight:700;letter-spacing:-.02em}
+.nav-tags{display:flex;gap:8px}
+.tag{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;padding:4px 12px;border-radius:100px}
+.tag-beta{color:var(--amber);background:rgba(232,148,58,0.1);border:1px solid rgba(232,148,58,.18)}
+.tag-hiring{color:var(--green);background:rgba(16,245,160,0.08);border:1px solid rgba(16,245,160,.18)}
+
+.container{max-width:1140px;margin:0 auto;padding:0 clamp(20px,4vw,40px)}
+.section{padding:clamp(56px,8vh,96px) 0}
+.section-border{border-top:1px solid var(--border)}
+
+.label{font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:.2em;color:var(--blue-bright);text-shadow:0 0 12px rgba(0,112,243,.3)}
+.heading-xl{font-size:clamp(32px,4.5vw,54px);font-weight:700;line-height:1.06;letter-spacing:-.04em}
+.heading-lg{font-size:clamp(24px,3vw,36px);font-weight:700;line-height:1.1;letter-spacing:-.03em}
+.text-body{font-size:clamp(15px,1.1vw,17px);color:var(--text-secondary);line-height:1.7;font-weight:450}
+
+/* Hero */
+.hero{min-height:100dvh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:100px 20px 60px}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;background:rgba(16,245,160,0.06);border:1px solid rgba(16,245,160,.15);border-radius:100px;margin-bottom:28px}
+.hero-eyebrow-dot{width:6px;height:6px;background:var(--green);border-radius:50%;animation:pulse-dot 2s ease-in-out infinite}
+@keyframes pulse-dot{0%,to{opacity:1}50%{opacity:.3}}
+.hero-eyebrow-text{font-size:14px;font-weight:500;color:var(--text-secondary);letter-spacing:.02em}
+.hero-title{max-width:800px;margin-bottom:24px}
+.hero-highlight{color:var(--green)}
+.hero-hooks{display:flex;flex-wrap:wrap;justify-content:center;gap:20px;margin-bottom:32px}
+.hero-hook{font-size:clamp(15px,1.1vw,17px);color:var(--text-primary);font-weight:500;display:flex;align-items:center;gap:8px}
+.hero-hook svg{color:var(--blue-bright);flex-shrink:0}
+.hero-stat{font-size:clamp(48px,6vw,72px);font-weight:700;letter-spacing:-.04em;background:linear-gradient(180deg,#fff 0%,var(--green) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+.hero-stat-label{font-size:16px;color:var(--text-muted);font-weight:500;margin-bottom:32px}
+.btn-apply{display:inline-flex;align-items:center;gap:10px;padding:16px 36px;font-size:17px;font-weight:600;color:#fff;background:rgba(6,6,10,0.9);border:1px solid rgba(16,245,160,.35);border-radius:var(--radius);transition:all .35s var(--ease);font-family:var(--font)}
+.btn-apply:hover{border-color:rgba(16,245,160,.6);box-shadow:0 0 30px rgba(16,245,160,.15);transform:translateY(-2px)}
+.btn-apply svg{transition:transform .3s var(--ease)}
+.btn-apply:hover svg{transform:translateX(3px)}
+.hero-limited{font-size:13px;color:var(--text-muted);margin-top:16px;font-weight:500}
+
+/* Fit filter */
+.fit-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:800px;margin:0 auto}
+.fit-col{padding:28px 32px;border-radius:var(--radius-lg)}
+.fit-yes{background:rgba(16,245,160,0.03);border:1px solid rgba(16,245,160,.15)}
+.fit-no{background:rgba(255,255,255,0.02);border:1px solid var(--border)}
+.fit-col h3{font-size:16px;font-weight:700;margin-bottom:16px;text-transform:uppercase;letter-spacing:.05em}
+.fit-yes h3{color:var(--green)}
+.fit-no h3{color:var(--text-muted)}
+.fit-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.fit-col li{font-size:15px;color:var(--text-secondary);line-height:1.5;display:flex;align-items:flex-start;gap:8px}
+.fit-yes li::before{content:"✓";color:var(--green);font-weight:700;flex-shrink:0}
+.fit-no li::before{content:"✗";color:var(--text-muted);font-weight:700;flex-shrink:0}
+
+/* Product — compact */
+.product-strip{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:32px}
+.product-item{padding:20px 24px;background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:var(--radius);text-align:center}
+.product-item h4{font-size:16px;font-weight:700;margin-bottom:6px}
+.product-item p{font-size:14px;color:var(--text-muted);line-height:1.5}
+.product-pitch{margin-top:32px;padding:24px 28px;background:rgba(0,112,243,0.05);border:1px solid rgba(0,112,243,.15);border-radius:var(--radius-lg);text-align:center}
+.product-pitch p{font-size:clamp(15px,1.1vw,17px);color:var(--text-primary);line-height:1.7;font-weight:450;max-width:660px;margin:0 auto}
+.price-compare{display:flex;align-items:center;justify-content:center;gap:24px;margin-top:28px;flex-wrap:wrap}
+.price-them{font-size:20px;color:var(--text-muted);text-decoration:line-through;font-weight:500}
+.price-arrow{color:var(--text-muted)}
+.price-us{font-size:28px;font-weight:700;color:var(--green)}
+.price-us span{font-size:14px;font-weight:400;color:var(--text-muted);display:block;margin-top:2px}
+
+/* How You Work */
+.approach-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:32px}
+.card{background:var(--black-card);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius-lg);padding:clamp(24px,3vw,36px);transition:border-color .3s var(--ease),transform .3s var(--ease);border-top:1px solid rgba(255,255,255,.1)}
+.card:hover{border-color:var(--border-accent);transform:translateY(-2px)}
+.approach-card{text-align:center}
+.approach-card .approach-emoji{font-size:28px;margin-bottom:12px;display:block}
+.approach-card h3{font-size:18px;font-weight:700;margin-bottom:4px}
+.approach-card .approach-sub{font-size:12px;color:var(--blue-bright);font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px}
+.approach-card p{font-size:14px;color:var(--text-secondary);line-height:1.6}
+.freedom-note{margin-top:24px;text-align:center;padding:20px;border:1px solid var(--border);border-radius:var(--radius);background:rgba(255,255,255,0.02)}
+.freedom-note p{font-size:15px;color:var(--text-primary);font-weight:450}
+.freedom-note strong{color:var(--amber)}
+.time-note{margin-top:12px;text-align:center}
+.time-note p{font-size:14px;color:var(--text-muted)}
+
+/* Starter Pack — compressed */
+.pack-compact{max-width:700px;margin:32px auto 0;padding:28px 32px;background:var(--black-card);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius-lg);border-top:1px solid rgba(255,255,255,.1)}
+.pack-list{display:flex;flex-direction:column;gap:12px}
+.pack-line{display:flex;align-items:flex-start;gap:10px;font-size:15px;color:var(--text-secondary);line-height:1.5}
+.pack-line strong{color:var(--text-primary)}
+.pack-check{color:var(--blue-bright);font-weight:700;flex-shrink:0;font-size:16px}
+
+/* Earnings */
+.earnings-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:40px}
+.earnings-card{text-align:center}
+.earnings-card .earnings-method{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--blue-bright);margin-bottom:16px}
+.earnings-card .earnings-amount{font-size:clamp(28px,3vw,36px);font-weight:700;letter-spacing:-.03em;margin-bottom:4px}
+.earnings-card .earnings-period{font-size:14px;color:var(--text-muted);margin-bottom:16px}
+.earnings-card .earnings-detail{font-size:14px;color:var(--text-secondary);line-height:1.6;text-align:left}
+.earnings-card .earnings-detail li{margin-bottom:6px}
+.earnings-card .earnings-detail ul{list-style:none;padding:0}
+.earnings-card .earnings-detail li::before{content:"→ ";color:var(--blue-bright);font-weight:600}
+
+/* Data proof */
+.data-proof{margin-top:48px;max-width:760px;margin-left:auto;margin-right:auto}
+.data-proof-title{font-size:20px;font-weight:700;text-align:center;margin-bottom:24px;letter-spacing:-.01em}
+.data-facts{display:flex;flex-direction:column;gap:12px}
+.data-fact{display:flex;gap:14px;align-items:flex-start;padding:18px 22px;background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:var(--radius);transition:border-color .3s}
+.data-fact:hover{border-color:var(--border-hover)}
+.data-fact-stat{font-size:28px;font-weight:700;color:var(--blue-bright);flex-shrink:0;min-width:70px;text-align:center;line-height:1.1}
+.data-fact-content{flex:1}
+.data-fact-content p{font-size:15px;color:var(--text-secondary);line-height:1.6}
+.data-fact-content strong{color:var(--text-primary)}
+.data-source{display:inline-flex;align-items:center;gap:4px;font-size:12px;color:var(--blue-bright);margin-top:6px;text-decoration:none;opacity:.7;transition:opacity .2s}
+.data-source:hover{opacity:1;text-decoration:underline}
+.data-source svg{flex-shrink:0}
+.compound-callout{margin-top:24px;padding:24px 28px;background:rgba(232,148,58,0.06);border:1px solid rgba(232,148,58,.15);border-radius:var(--radius-lg);text-align:center}
+.compound-callout p{font-size:16px;color:var(--text-primary);font-weight:450;line-height:1.7;max-width:620px;margin:0 auto}
+.data-bottomline{margin-top:24px;text-align:center;padding:24px;border:1px solid rgba(0,112,243,.2);border-radius:var(--radius-lg);background:rgba(0,112,243,0.04)}
+.data-bottomline p{font-size:16px;color:var(--text-primary);line-height:1.7;font-weight:450;max-width:600px;margin:0 auto}
+
+/* Bigger Picture — Visual Stack */
+.future-section{background:rgba(0,0,0,0.6);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.future-header{text-align:center;margin-bottom:56px}
+.stack-wrap{max-width:680px;margin:0 auto;display:flex;flex-direction:column;gap:0}
+.stack-layer{position:relative;padding:28px 32px;border-left:1px solid rgba(255,255,255,.06);border-right:1px solid rgba(255,255,255,.06);text-align:center}
+.stack-layer:first-child{border-top:1px solid rgba(255,255,255,.06);border-radius:var(--radius-lg) var(--radius-lg) 0 0}
+.stack-layer:last-child{border-bottom:1px solid rgba(255,255,255,.06);border-radius:0 0 var(--radius-lg) var(--radius-lg)}
+.stack-beta{background:rgba(16,245,160,0.04);border-color:rgba(16,245,160,.2)!important}
+.stack-beta .stack-marker{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--green);background:rgba(16,245,160,0.1);border:1px solid rgba(16,245,160,.25);padding:4px 14px;border-radius:100px;margin-bottom:14px}
+.stack-beta .stack-marker-dot{width:6px;height:6px;background:var(--green);border-radius:50%;animation:pulse-dot 2s ease-in-out infinite}
+.stack-beta h3{font-size:22px;font-weight:700;margin-bottom:8px;color:var(--green)}
+.stack-beta p{font-size:15px;color:var(--text-secondary);line-height:1.65}
+.stack-full{background:rgba(232,148,58,0.03)}
+.stack-full .stack-phase{display:inline-block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--amber);background:rgba(232,148,58,0.1);border:1px solid rgba(232,148,58,.2);padding:4px 14px;border-radius:100px;margin-bottom:14px}
+.stack-full h3{font-size:22px;font-weight:700;margin-bottom:8px;color:var(--amber)}
+.stack-full p{font-size:15px;color:var(--text-secondary);line-height:1.65}
+.stack-scale{background:rgba(255,45,45,0.03)}
+.stack-scale .stack-phase{display:inline-block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--red);background:rgba(255,45,45,0.08);border:1px solid rgba(255,45,45,.18);padding:4px 14px;border-radius:100px;margin-bottom:14px}
+.stack-scale h3{font-size:22px;font-weight:700;margin-bottom:8px;color:var(--red)}
+.stack-scale p{font-size:15px;color:var(--text-secondary);line-height:1.65}
+.stack-glow{height:2px;background:linear-gradient(90deg,transparent,rgba(232,148,58,.3) 30%,rgba(232,148,58,.3) 70%,transparent)}
+.stack-glow-red{background:linear-gradient(90deg,transparent,rgba(255,45,45,.3) 30%,rgba(255,45,45,.3) 70%,transparent)}
+.stack-summary{margin-top:40px;text-align:center;max-width:620px;margin-left:auto;margin-right:auto}
+.stack-summary p{font-size:clamp(16px,1.15vw,18px);color:var(--text-primary);line-height:1.75;font-weight:450}
+.revenue-callout{margin-top:32px;padding:28px 32px;border:1px solid rgba(232,148,58,.18);border-radius:var(--radius-lg);background:rgba(232,148,58,0.04);text-align:center}
+.revenue-callout p{font-size:16px;color:var(--text-secondary);line-height:1.7;max-width:580px;margin:0 auto}
+.revenue-callout strong{color:var(--amber)}
+.top3-callout{margin-top:40px;padding:32px;border:1px solid rgba(16,245,160,.2);border-radius:var(--radius-lg);background:rgba(16,245,160,0.04);text-align:center}
+.top3-callout h3{font-size:24px;font-weight:700;margin-bottom:12px;color:var(--green)}
+.top3-callout p{font-size:16px;color:var(--text-secondary);line-height:1.7;max-width:600px;margin:0 auto}
+.top3-callout .small-note{font-size:13px;color:var(--text-muted);margin-top:12px}
+
+/* Form — simplified */
+.form-section{background:rgba(0,0,0,0.7);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+.form-wrap{max-width:480px;margin:0 auto}
+.form-group{margin-bottom:20px}
+.form-group label{display:block;font-size:14px;font-weight:600;color:var(--text-secondary);margin-bottom:8px}
+.form-group input,.form-group textarea{width:100%;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);border-radius:var(--radius);padding:13px 16px;font-size:15px;color:var(--text-primary);outline:none;font-family:var(--font);transition:border-color .2s}
+.form-group input:focus,.form-group textarea:focus{border-color:rgba(16,245,160,.4)}
+.form-group input::placeholder,.form-group textarea::placeholder{color:var(--text-muted)}
+.form-group textarea{resize:vertical;min-height:80px}
+.btn-submit{width:100%;padding:16px;font-size:17px;font-weight:600;color:#fff;background:rgba(6,6,10,0.9);border:1px solid rgba(16,245,160,.35);border-radius:var(--radius);cursor:pointer;font-family:var(--font);transition:all .35s var(--ease);display:flex;align-items:center;justify-content:center;gap:10px}
+.btn-submit:hover{border-color:rgba(16,245,160,.6);box-shadow:0 0 30px rgba(16,245,160,.15)}
+.form-note{text-align:center;margin-top:16px;font-size:13px;color:var(--text-muted)}
+.form-success{display:none;text-align:center;padding:48px 24px}
+.form-success h3{font-size:28px;font-weight:700;color:var(--green);margin-bottom:12px}
+.form-success p{font-size:16px;color:var(--text-secondary);line-height:1.7}
+
+.footer{border-top:1px solid var(--border);padding:32px 0;text-align:center}
+.footer p{font-size:14px;color:var(--text-muted)}
+
+@media(max-width:768px){
+  .product-strip,.approach-grid,.earnings-grid{grid-template-columns:1fr}
+  .fit-grid{grid-template-columns:1fr}
+  .price-compare{flex-direction:column;gap:8px}
+  .hero{min-height:auto;padding:100px 20px 48px}
+  .hero-hooks{flex-direction:column;align-items:center;gap:10px}
+}
+@media(min-width:769px) and (max-width:1024px){
+  .product-strip,.approach-grid,.earnings-grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<div class="bg-gradient"></div>
+
+<div class="site-content">
+
+  <!-- Nav -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <span class="nav-logo">SANO Solutions</span>
+      <div class="nav-tags">
+        <span class="tag tag-beta">Beta</span>
+        <span class="tag tag-hiring">Now Hiring</span>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- 1. HERO — hook, lifestyle, money, urgency -->
+  <section class="hero">
+    <div class="hero-eyebrow">
+      <span class="hero-eyebrow-dot"></span>
+      <span class="hero-eyebrow-text">Sales Positions Open — Houston, TX</span>
+    </div>
+    <h1 class="heading-xl hero-title">Earn <span class="hero-highlight">$1,000</span> Per Sale.<br>Set Your Own Schedule.</h1>
+    <div class="hero-hooks">
+      <span class="hero-hook"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>2 hours a day</span>
+      <span class="hero-hook"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>No boss. No cap.</span>
+      <span class="hero-hook"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Phone or on foot — your call</span>
+    </div>
+    <div class="hero-stat">$1,000</div>
+    <p class="hero-stat-label">commission per closed deal — 40% of every $2,500 sale</p>
+    <a href="#apply" class="btn-apply">Apply Now <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    <p class="hero-limited">We're building a small beta sales team — not hiring an army. If you're in, we move fast.</p>
+  </section>
+
+
+  <!-- 2. WHO THIS IS FOR -->
+  <section class="section section-border">
+    <div class="container">
+      <div class="fit-grid">
+        <div class="fit-col fit-yes">
+          <h3>This is for you if...</h3>
+          <ul>
+            <li>You're self-motivated — nobody needs to tell you to pick up the phone</li>
+            <li>You'd rather control your own income than wait for a paycheck someone else decides</li>
+            <li>You're looking for a side gig that can turn into a real career</li>
+            <li>You're comfortable talking to people — on the phone or face-to-face</li>
+            <li>You understand that what you put in is what you get out</li>
+          </ul>
+        </div>
+        <div class="fit-col fit-no">
+          <h3>Probably not for you if...</h3>
+          <ul>
+            <li>You're looking for a traditional 9-to-5 with a guaranteed hourly wage</li>
+            <li>You need someone managing your schedule and telling you what to do</li>
+            <li>You expect results without putting in real effort</li>
+            <li>You're not comfortable with rejection being part of the process</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 3. WHAT YOU'RE SELLING — compact, pitch-focused -->
+  <section class="section section-border" id="product">
+    <div class="container">
+      <div style="text-align:center">
+        <p class="label">What You're Selling</p>
+        <h2 class="heading-lg" style="margin-top:14px">A $2,500 package that agencies charge $8K–$15K for.</h2>
+        <p class="text-body" style="margin-top:14px;max-width:600px;margin-left:auto;margin-right:auto">When you explain it, business owners get it. When they hear the price, they can't say no. You're not selling a website — you're selling the first step into AI automation for their business.</p>
+      </div>
+
+      <div class="product-strip">
+        <div class="product-item">
+          <h4>Custom Website</h4>
+          <p>Up to 7 pages, designed from scratch. The kind of site that makes a business owner say "I need this."</p>
+        </div>
+        <div class="product-item">
+          <h4>AI Chatbot</h4>
+          <p>Trained on their business. Answers customers 24/7. Captures leads while they sleep.</p>
+        </div>
+        <div class="product-item">
+          <h4 style="color: var(--blue);">Admin Dashboard</h4>
+          <p>They update their own site like editing a document. No developer. No extra fees. Ever.</p>
+        </div>
+      </div>
+
+      <div class="product-pitch">
+        <p>This is the smallest threshold for any business to start automating. It's the foundation that primes everything that comes next. You're selling the entry point into the future of how they run their business — and it's <strong>live in 1–3 days.</strong></p>
+      </div>
+
+      <div class="price-compare">
+        <span class="price-them">Agencies: $8,000–$15,000+</span>
+        <span class="price-arrow"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        <span class="price-us">$2,500 flat <span>One-time. No monthly fees. Live in 1–3 days.</span></span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 4. HOW YOU WORK — tightened -->
+  <section class="section section-border" id="approach">
+    <div class="container">
+      <div style="text-align:center">
+        <p class="label">How You Work</p>
+        <h2 class="heading-lg" style="margin-top:14px">Three ways to attack it. Your call.</h2>
+      </div>
+
+      <div class="approach-grid">
+        <div class="card approach-card">
+          <span class="approach-emoji">&#128222;</span>
+          <h3>Phone Calls</h3>
+          <p class="approach-sub">Higher Volume</p>
+          <p>Call businesses from the list we give you. Cover more ground, talk to more people, fill your pipeline fast.</p>
+        </div>
+        <div class="card approach-card">
+          <span class="approach-emoji">&#128694;</span>
+          <h3>In-Person</h3>
+          <p class="approach-sub">Higher Close Rate</p>
+          <p>Walk in, pull up the SANO demo on your phone. Face-to-face builds trust. Fewer stops, way more closes.</p>
+        </div>
+        <div class="card approach-card">
+          <span class="approach-emoji">&#128640;</span>
+          <h3>Hybrid</h3>
+          <p class="approach-sub">The Sweet Spot</p>
+          <p>Call to qualify, visit the warm ones. Or visit first, follow up by phone. Build your pipeline from both angles.</p>
+        </div>
+      </div>
+
+      <div class="freedom-note">
+        <p>This is <strong>your business within our business.</strong> No one's micromanaging your hours or capping your income. You eat what you kill.</p>
+      </div>
+      <div class="time-note">
+        <p>Most reps work 2 hours a day, Monday through Friday. Some do more. Nobody does less and wins.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 5. STARTER PACK — compressed -->
+  <section class="section section-border" id="starterpack">
+    <div class="container">
+      <div style="text-align:center">
+        <p class="label">Day One</p>
+        <h2 class="heading-lg" style="margin-top:14px">You're not going in blind.</h2>
+      </div>
+
+      <div class="pack-compact">
+        <div class="pack-list">
+          <div class="pack-line"><span class="pack-check">&#10003;</span><p><strong>Curated business list</strong> — names, numbers, websites, and notes on why SANO is a fit for each one</p></div>
+          <div class="pack-line"><span class="pack-check">&#10003;</span><p><strong>Script &amp; talking points</strong> — so you pitch confidently from your very first call</p></div>
+          <div class="pack-line"><span class="pack-check">&#10003;</span><p><strong>Lead tracking system</strong> — label prospects, add notes, build your pipeline, watch it optimize</p></div>
+          <div class="pack-line"><span class="pack-check">&#10003;</span><p><strong>Full product training</strong> — know every detail of what SANO delivers before you make a single call</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 6. THE MONEY — sourced data + earnings + payment info + no-ceiling reframe -->
+  <section class="section section-border" id="earnings">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:16px">
+        <h2 class="heading-lg" style="color:var(--blue-bright)">The Money</h2>
+        <p class="text-body" style="margin-top:14px;max-width:620px;margin-left:auto;margin-right:auto">This is a numbers game — and the numbers are public. Here's what actual industry data says about B2B sales, and what that means for your pocket.</p>
+      </div>
+
+      <div class="data-proof">
+        <p class="data-proof-title">The Cold Hard Facts</p>
+        <div class="data-facts">
+          <div class="data-fact">
+            <span class="data-fact-stat">2–5%</span>
+            <div class="data-fact-content">
+              <p><strong>Cold calling close rate.</strong> For every 100 calls you make, 2–5 turn into closed deals. The industry average sits at 2.3% — top performers hit 6–10%+.</p>
+              <a href="https://www.cognism.com/blog/cold-calling-statistics" target="_blank" class="data-source"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Cognism — 2026 Cold Calling Statistics</a>
+            </div>
+          </div>
+          <div class="data-fact">
+            <span class="data-fact-stat">40</span>
+            <div class="data-fact-content">
+              <p><strong>Calls/day in a 2-hour block.</strong> At ~3 min per call, 2 hours of calling = 40 dials a day. Monday through Friday, that's 200 calls a week — 880+ a month. At industry cold-call close rates, that math lands at 2–4 closed deals per month. At $1,000 per deal, that's $2,000–$4,000/mo from phone work alone. That's the average — strong closers beat it, and adding even one more hour a day puts you at 60 dials — 1,320/month — pushing $3,000–$6,000/mo.</p>
+              <a href="https://getmapleads.io/blog/how-to-get-web-design-clients-through-cold-calling" target="_blank" class="data-source"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> GetMapLeads — Cold Calling for Service Sales</a>
+            </div>
+          </div>
+          <div class="data-fact">
+            <span class="data-fact-stat">10x</span>
+            <div class="data-fact-content">
+              <p><strong>Your pipeline is your real paycheck.</strong> Cold calls convert at 2–5% — but every call you make builds your pipeline. Warm follow-ups close at 20–30%, which is 10x the cold rate. A few weeks in, you're not starting from zero anymore — you've got a list of people who already know what SANO does. That pipeline compounds, and it's what separates reps who make good money from reps who make great money.</p>
+              <a href="https://leadsatscale.com/insights/warm-calling-vs-cold-calling-data-driven-analysis/" target="_blank" class="data-source"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Leads at Scale — Warm vs Cold Calling Analysis</a>
+            </div>
+          </div>
+          <div class="data-fact">
+            <span class="data-fact-stat">4.2x</span>
+            <div class="data-fact-content">
+              <p><strong>More likely to book a meeting face-to-face.</strong> In-person visits with a demo in hand dramatically outperform phone-only outreach. Walk into a business, show them what SANO builds on your phone, and your odds of closing multiply.</p>
+              <a href="https://www.salesgenie.com/blog/cold-calling-statistics-for-sales-representatives/" target="_blank" class="data-source"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> SalesGenie — Cold Calling Statistics for Sales Reps</a>
+            </div>
+          </div>
+          <div class="data-fact">
+            <span class="data-fact-stat" style="color:var(--green)">6–10%+</span>
+            <div class="data-fact-content">
+              <p><strong>Top performer close rate.</strong> The average rep closes at 2–3%. Top performers consistently hit 6–10%+. The difference? Better targeting, relentless follow-up, and working their pipeline instead of just dialing numbers. SANO gives you the list and the tools — you bring the grind.</p>
+              <a href="https://www.cognism.com/blog/cold-calling-success-rates" target="_blank" class="data-source"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Cognism — 2026 Cold Calling Success Rates</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:48px">
+        <p class="data-proof-title">What That Means For You</p>
+        <div class="earnings-grid">
+          <div class="card earnings-card">
+            <p class="earnings-method">Phone Only</p>
+            <p class="earnings-amount" style="color:var(--blue-bright)">$2K–$4K</p>
+            <p class="earnings-period">per month</p>
+            <div class="earnings-detail">
+              <ul>
+                <li>~40 calls/day (2 hours)</li>
+                <li>~800 calls/month</li>
+                <li>At 2–5% close: 2–4 deals</li>
+                <li>$1,000 × 2–4 = <strong style="color:var(--text-primary)">$2,000–$4,000</strong></li>
+              </ul>
+            </div>
+          </div>
+          <div class="card earnings-card">
+            <p class="earnings-method">In-Person</p>
+            <p class="earnings-amount" style="color:var(--cyan)">$4K–$6K</p>
+            <p class="earnings-period">per month</p>
+            <div class="earnings-detail">
+              <ul>
+                <li>~6–8 visits/day with demo</li>
+                <li>~120–160 visits/month</li>
+                <li>4.2x higher meeting rate</li>
+                <li>$1,000 × 4–6 = <strong style="color:var(--text-primary)">$4,000–$6,000</strong></li>
+              </ul>
+            </div>
+          </div>
+          <div class="card earnings-card">
+            <p class="earnings-method">Hybrid — Sweet Spot</p>
+            <p class="earnings-amount" style="color:var(--green)">$6K–$10K</p>
+            <p class="earnings-period">per month</p>
+            <div class="earnings-detail">
+              <ul>
+                <li>Call first, visit the warm ones</li>
+                <li>Follow-ups at 20–30% close</li>
+                <li>Pipeline compounds monthly</li>
+                <li>$1,000 × 6–10 = <strong style="color:var(--text-primary)">$6,000–$10,000</strong></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="compound-callout">
+        <p>These numbers <strong>compound</strong>. Month one you're building your pipeline. By month three, follow-ups from earlier conversations start converting — your monthly income climbs without adding more hours. <strong>80% of sales close after the 5th follow-up</strong> and most reps quit after one. Don't be most reps.</p>
+      </div>
+
+      <div class="data-bottomline">
+        <p>You get paid when the deal closes — no waiting for corporate payroll cycles. There's no salary cap. No one decides what you're worth except <strong>you</strong>.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 7. THE BIGGER PICTURE — visual stack -->
+  <section class="section section-border future-section" id="future">
+    <div class="container">
+      <div class="future-header">
+        <p class="label" style="color:var(--amber)">The Bigger Picture</p>
+        <h2 class="heading-lg" style="margin-top:14px;color:var(--red);text-transform:uppercase;text-shadow:0 0 20px rgba(255,45,45,.5),0 0 40px rgba(255,45,45,.25)">The beta is just the beginning.</h2>
+        <p class="text-body" style="margin-top:14px;max-width:620px;margin-left:auto;margin-right:auto">Right now you're selling the foundation. What comes next is the full machine — Fortune 500 automation tools built for local businesses. Higher price points. Recurring monthly revenue. And every client you sell now is already warmed up for the upgrade.</p>
+      </div>
+
+      <div class="stack-wrap">
+        <div class="stack-layer stack-scale">
+          <span class="stack-phase">Phase 3 — Scale</span>
+          <h3>Multi-City. Multi-Market. Your Territory.</h3>
+          <p>Houston is just the launchpad. As SANO expands into new cities and markets, the reps who proved themselves early get first pick of new territory. Same playbook, bigger map, more money.</p>
+        </div>
+        <div class="stack-glow stack-glow-red"></div>
+        <div class="stack-layer stack-full">
+          <span class="stack-phase">Phase 2 — Full Rollout</span>
+          <h3>Fortune 500 Tools for Local Businesses</h3>
+          <p>The full SANO suite gives small businesses the exact same automation infrastructure that corporations spend hundreds of thousands of dollars on — built, managed, and optimized for them. Complete business automation at a price they can actually afford. Higher price points for you. Recurring monthly revenue on every client you've ever sold.</p>
+        </div>
+        <div class="stack-glow"></div>
+        <div class="stack-layer stack-beta">
+          <span class="stack-marker"><span class="stack-marker-dot"></span> You Are Here</span>
+          <h3>Phase 1 — The Beta</h3>
+          <p>Custom website, AI chatbot, admin dashboard. The foundation every business needs and the entry point into everything SANO is building. This is what you're selling now — and every client you close becomes a warm follow-up for Phase 2.</p>
+        </div>
+      </div>
+
+      <div class="revenue-callout">
+        <p>Beta: <strong>$1,000 per sale, one-time.</strong> Full rollout: <strong>recurring monthly commissions on every client.</strong> The clients you build now become your income stream later.</p>
+      </div>
+
+      <div class="top3-callout">
+        <h3>Top 3 Reps Earn a Full-Time Position</h3>
+        <p>The top three performers during the beta earn a full-time sales leadership role when SANO launches the full suite. You'll lead your own team, manage your own territory, and have access to higher-ceiling packages with recurring monthly revenue.</p>
+        <p class="small-note">Full-time positions are commission-based with significantly higher earning potential through recurring revenue and higher price points.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 8. APPLICATION — simplified -->
+  <section class="section section-border form-section" id="apply">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:40px">
+        <p class="label" style="color:var(--green)">Apply</p>
+        <h2 class="heading-lg" style="margin-top:14px">Drop your info. We move fast.</h2>
+      </div>
+
+      <div class="form-wrap">
+        <form id="application-form" onsubmit="handleSubmit(event)">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Full name" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="(000) 000-0000" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email <span style="font-weight:400;color:var(--text-muted)">(optional)</span></label>
+            <input type="email" id="email" name="email" placeholder="your@email.com">
+          </div>
+          <div class="form-group">
+            <label for="about">Tell us about yourself <span style="font-weight:400;color:var(--text-muted)">(optional)</span></label>
+            <textarea id="about" name="about" placeholder="Sales experience, what drives you, why this caught your eye..."></textarea>
+          </div>
+          <button type="submit" class="btn-submit">Submit Application <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
+          <p class="form-note">If you're a fit, we'll text you back fast.</p>
+        </form>
+
+        <div class="form-success" id="form-success">
+          <h3>Application Received</h3>
+          <p>We got your info. If you're a fit, we'll be in touch soon — we move fast. Keep your phone close.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 SANO Solutions. Houston, TX. All rights reserved.</p>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+function handleSubmit(e){
+  e.preventDefault();
+  var form=document.getElementById('application-form');
+  var data={
+    name:form.name.value,
+    phone:form.phone.value,
+    email:form.email.value||'not provided',
+    about:form.about.value||'not provided',
+    timestamp:new Date().toISOString()
+  };
+  console.log('SANO Sales Application:',JSON.stringify(data,null,2));
+
+  fetch('https://formspree.io/f/YOUR_FORM_ID',{
+    method:'POST',
+    headers:{'Content-Type':'application/json','Accept':'application/json'},
+    body:JSON.stringify(data)
+  }).then(function(){showSuccess()}).catch(function(){showSuccess()});
+
+  function showSuccess(){
+    form.style.display='none';
+    document.getElementById('form-success').style.display='block';
+  }
+}
+</script>
+
+</body>
+</html>
